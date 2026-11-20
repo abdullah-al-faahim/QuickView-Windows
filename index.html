@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuickView: press Space to preview any file on Windows</title>
+<meta name="description" content="QuickView brings Space-to-preview to Windows. PDF, Word, PowerPoint, PSD, AI, EPS, SVG, Sketch, RAW photos and 100+ more formats, from a free 62 KB app.">
+<meta name="theme-color" content="#0b1020">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-256.png">
+<link rel="canonical" href="https://abdullah-al-faahim.github.io/QuickView-Windows/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickView">
+<meta property="og:title" content="QuickView: press Space to preview any file on Windows">
+<meta property="og:description" content="Free 62 KB app. PDF, Office, PSD, AI, EPS, SVG, Sketch, RAW and 100+ more formats, right from File Explorer.">
+<meta property="og:url" content="https://abdullah-al-faahim.github.io/QuickView-Windows/">
+<meta property="og:image" content="https://abdullah-al-faahim.github.io/QuickView-Windows/assets/thumbnail.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="QuickView: press Space to preview any file on Windows">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QuickView: press Space to preview any file on Windows">
+<meta name="twitter:description" content="Free 62 KB app. PDF, Office, PSD, AI, EPS, SVG, Sketch, RAW and 100+ more formats.">
+<meta name="twitter:image" content="https://abdullah-al-faahim.github.io/QuickView-Windows/assets/thumbnail.png">
+
+<style>
+:root {
+  --bg: #0b1020; --bg2: #11172a; --card: rgba(255,255,255,.045); --line: rgba(255,255,255,.09);
+  --fg: #e8ecf5; --dim: #a3adc4; --mute: #707b95; --blue: #3b82f6; --blue2: #2563eb; --violet: #a855f7;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #93c5fd; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: rgba(11,16,32,.72); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; align-items: center; height: 62px; gap: 24px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; color: var(--fg); text-decoration: none; }
+.logo img { width: 30px; height: 30px; }
+nav .links { margin-left: auto; display: flex; gap: 22px; align-items: center; }
+nav .links a { color: var(--dim); text-decoration: none; font-size: 15px; }
+nav .links a:hover { color: var(--fg); }
+nav .links a.btn-sm { color: #fff; background: var(--blue2); padding: 7px 14px; border-radius: 8px; font-weight: 600; }
+
+header.hero { position: relative; overflow: hidden; padding: 84px 0 70px;
+  background: radial-gradient(900px 520px at 85% 0%, rgba(59,130,246,.30), transparent 60%),
+              radial-gradient(700px 500px at 0% 100%, rgba(147,51,234,.22), transparent 60%); }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+.eyebrow { display: inline-flex; gap: 8px; align-items: center; font-size: 13.5px; color: #c7d2fe; background: rgba(99,102,241,.14); border: 1px solid rgba(129,140,248,.3); padding: 5px 12px; border-radius: 99px; }
+h1 { font-family: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif; font-size: clamp(40px, 6vw, 66px); line-height: 1.04; letter-spacing: -2px; margin: 20px 0 0; }
+h1 em { font-style: normal; background: linear-gradient(90deg,#60a5fa,#c084fc); -webkit-background-clip: text; background-clip: text; color: transparent; }
+kbd.key { display: inline-block; font: 600 .62em/1 "Segoe UI", system-ui, sans-serif; padding: .2em .6em .3em; border-radius: .3em; background: linear-gradient(#f8fafc,#d9dee8); color: #111827; box-shadow: 0 .14em 0 #8b93a7, 0 .3em .6em rgba(0,0,0,.35); vertical-align: .18em; letter-spacing: 0; }
+.lead { font-size: 20px; color: var(--dim); margin: 22px 0 0; max-width: 34em; }
+.cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 650; border-radius: 12px; transition: transform .15s, box-shadow .15s, background .15s; }
+.btn-dl { color: #fff; padding: 15px 26px; font-size: 18px; background: linear-gradient(180deg,#3b82f6,#2563eb); box-shadow: 0 10px 30px rgba(37,99,235,.45), inset 0 1px 0 rgba(255,255,255,.25); }
+.btn-dl:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(37,99,235,.55), inset 0 1px 0 rgba(255,255,255,.25); }
+.btn-dl small { display: block; font-weight: 400; font-size: 12.5px; opacity: .85; }
+.btn-ghost { color: var(--fg); padding: 14px 20px; border: 1px solid var(--line); background: var(--card); }
+.btn-ghost:hover { background: rgba(255,255,255,.08); }
+.meta { margin-top: 16px; font-size: 14px; color: var(--mute); }
+
+/* mock */
+.mock { position: relative; height: 430px; }
+.ex { position: absolute; left: 0; top: 0; width: 82%; border-radius: 14px; background: #1a1f2e; border: 1px solid var(--line); box-shadow: 0 30px 60px rgba(0,0,0,.45); overflow: hidden; }
+.ex .bar { height: 36px; display: flex; align-items: center; gap: 7px; padding: 0 14px; background: #202637; font-size: 13px; color: #9aa4ba; }
+.ex .bar i { width: 10px; height: 10px; border-radius: 50%; background: #3a4258; }
+.ex .row { display: flex; align-items: center; gap: 12px; padding: 8px 16px; font-size: 14.5px; color: #c9d1e3; }
+.ex .row.sel { background: rgba(59,130,246,.28); box-shadow: inset 3px 0 0 var(--blue); color: #fff; }
+.ft { width: 40px; text-align: center; font-size: 10.5px; font-weight: 700; padding: 3px 0; border-radius: 5px; color: #fff; flex: none; }
+.ex .row span:last-child { margin-left: auto; color: #6f7a93; font-size: 12.5px; }
+.pv { position: absolute; right: 0; top: 118px; width: 62%; aspect-ratio: 1; border-radius: 14px; overflow: hidden; background: #1c1c1e; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 40px 80px rgba(0,0,0,.6); animation: pop .6s cubic-bezier(.2,.9,.3,1.2) .4s both; }
+.pv .t { height: 32px; display: flex; align-items: center; gap: 8px; padding: 0 12px; background: #202022; font-size: 12px; color: #b8bcc8; white-space: nowrap; overflow: hidden; }
+.pv .t img { width: 15px; }
+.pv .art { position: absolute; inset: 32px 0 0; background: linear-gradient(135deg,#ff8a3d,#d9467d 45%,#5b2bd6); overflow: hidden; }
+.pv .sun { position: absolute; width: 38%; aspect-ratio: 1; border-radius: 50%; left: 10%; top: 10%; background: radial-gradient(circle at 35% 35%,#fff6b0,#ffd23f 55%,#ffb000); box-shadow: 0 0 60px rgba(255,210,63,.6); }
+.pv .h1, .pv .h2 { position: absolute; border-radius: 50%; height: 65%; }
+.pv .h1 { left: -15%; right: -15%; bottom: -30%; background: #2b1a6b; }
+.pv .h2 { left: 30%; right: -40%; bottom: -38%; background: #1b0f4a; }
+.pv .cap { position: absolute; left: 8%; bottom: 7%; color: #fff; font-weight: 800; font-size: clamp(20px,2.6vw,32px); letter-spacing: -1px; }
+.pv .cap small { display: block; font-size: 12px; letter-spacing: 3px; opacity: .8; font-weight: 600; }
+.press { position: absolute; left: 0; bottom: 4px; display: flex; gap: 10px; align-items: center; color: var(--dim); font-size: 14px; }
+.press kbd { font: 600 13px "Segoe UI", sans-serif; padding: 4px 30px; border-radius: 7px; background: linear-gradient(#f8fafc,#d9dee8); color: #111827; box-shadow: 0 3px 0 #8b93a7; animation: tap 2.4s ease-in-out infinite; }
+@keyframes pop { from { opacity: 0; transform: scale(.85) translateY(20px); } }
+@keyframes tap { 0%,70%,100% { transform: none; box-shadow: 0 3px 0 #8b93a7; } 78% { transform: translateY(3px); box-shadow: 0 0 0 #8b93a7; } }
+
+.stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: -10px; }
+.stats div { background: var(--bg2); padding: 22px 24px; }
+.stats b { display: block; font-size: 30px; letter-spacing: -1px; font-family: "Segoe UI Variable Display","Segoe UI",sans-serif; }
+.stats span { color: var(--mute); font-size: 14px; }
+
+section { padding: 92px 0 0; }
+h2 { font-family: "Segoe UI Variable Display","Segoe UI",system-ui,sans-serif; font-size: clamp(30px,4vw,42px); letter-spacing: -1.2px; line-height: 1.1; margin: 0; }
+.sec-lead { color: var(--dim); margin: 12px 0 0; max-width: 40em; }
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 36px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+.card .n { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-weight: 700; background: rgba(59,130,246,.18); color: #93c5fd; }
+.card h3 { margin: 16px 0 6px; font-size: 19px; }
+.card p { margin: 0; color: var(--dim); font-size: 15.5px; }
+
+.formats { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin-top: 36px; }
+.fmt h3 { margin: 0 0 4px; font-size: 18px; }
+.fmt p { margin: 0 0 14px; color: var(--mute); font-size: 14.5px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { font-size: 12.5px; font-weight: 650; padding: 4px 9px; border-radius: 6px; background: rgba(255,255,255,.07); color: #d5dbe8; letter-spacing: .3px; }
+
+.keys { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 32px; }
+.keys .card { padding: 22px; text-align: center; }
+.keys kbd { display: inline-block; font: 600 15px "Segoe UI",sans-serif; min-width: 44px; padding: 6px 12px; border-radius: 8px; background: linear-gradient(#f8fafc,#d9dee8); color: #111827; box-shadow: 0 3px 0 #8b93a7; margin: 0 2px 12px; }
+.keys p { margin: 0; color: var(--dim); font-size: 15px; }
+
+details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; margin-top: 12px; }
+details summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+details summary::after { content: "+"; color: var(--mute); font-size: 22px; line-height: 1; }
+details[open] summary::after { content: "–"; }
+details p { color: var(--dim); margin: 12px 0 0; font-size: 15.5px; }
+code { background: rgba(255,255,255,.08); padding: 2px 6px; border-radius: 5px; font-size: .9em; }
+
+.final { margin: 100px 0 0; text-align: center; padding: 64px 24px; border-radius: 24px; border: 1px solid var(--line);
+  background: radial-gradient(600px 300px at 50% 0%, rgba(59,130,246,.25), transparent 70%), var(--bg2); }
+.final img { width: 84px; filter: drop-shadow(0 12px 30px rgba(37,99,235,.6)); }
+.final .cta { justify-content: center; }
+footer { color: var(--mute); font-size: 14px; text-align: center; padding: 48px 0 56px; }
+footer a { color: var(--dim); }
+
+.hero .wrap > *, .stats > *, .steps > *, .formats > *, .keys > * { min-width: 0; }
+body { overflow-x: hidden; }
+@media (max-width: 900px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .mock { height: 380px; max-width: 520px; }
+  .stats { grid-template-columns: repeat(2,1fr); margin-top: 30px; }
+  .steps, .formats { grid-template-columns: 1fr; }
+  .keys { grid-template-columns: repeat(2,1fr); }
+  nav .links a:not(.btn-sm) { display: none; }
+}
+@media (max-width: 480px) { .mock { height: 320px; } .lead { font-size: 18px; } .wrap { padding: 0 16px; } }
+@media (prefers-reduced-motion: reduce) { .pv, .press kbd { animation: none; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#"><img src="assets/icon-256.png" alt="">QuickView</a>
+  <div class="links">
+    <a href="#how">How it works</a><a href="#formats">Formats</a><a href="#faq">FAQ</a>
+    <a href="https://github.com/abdullah-al-faahim/QuickView-Windows/releases">Releases</a>
+    <a class="btn-sm" href="https://github.com/abdullah-al-faahim/QuickView-Windows/releases/latest/download/QuickView.exe">Download</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">✨ Free · Windows 10 &amp; 11 · v1.0.0</span>
+    <h1>Press <kbd class="key">Space</kbd><br>to preview <em>anything</em>.</h1>
+    <p class="lead">Select a file in File Explorer and press Space. PDFs, Office documents, Photoshop and Illustrator files, SVGs, RAW photos and 100+ more formats open instantly, without starting the full app.</p>
+    <div class="cta">
+      <a class="btn btn-dl" href="https://github.com/abdullah-al-faahim/QuickView-Windows/releases/latest/download/QuickView.exe">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+        <span>Download for Windows<small>QuickView.exe · 62 KB</small></span>
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/abdullah-al-faahim/QuickView-Windows/releases/latest/download/QuickView-1.0.0-win64.zip">ZIP with installer</a>
+    </div>
+    <p class="meta">No installer framework, no runtime, no telemetry. 64-bit Windows 10 (1703+) or Windows 11.</p>
+  </div>
+  <div class="mock" aria-hidden="true">
+    <div class="ex">
+      <div class="bar"><i></i><i></i><i></i><span style="margin-left:8px">Projects › Brand Refresh</span></div>
+      <div class="row"><span class="ft" style="background:#dc2626">PDF</span>Brand guidelines.pdf<span>4.2 MB</span></div>
+      <div class="row"><span class="ft" style="background:#2563eb">DOCX</span>Campaign brief.docx<span>88 KB</span></div>
+      <div class="row sel"><span class="ft" style="background:#0ea5e9">PSD</span>Poster final.psd<span>58 MB</span></div>
+      <div class="row"><span class="ft" style="background:#ea580c">AI</span>Logo master.ai<span>2.1 MB</span></div>
+      <div class="row"><span class="ft" style="background:#b45309">PPTX</span>Launch deck.pptx<span>12 MB</span></div>
+      <div class="row"><span class="ft" style="background:#7c3aed">EPS</span>Icon set.eps<span>940 KB</span></div>
+      <div class="row"><span class="ft" style="background:#16a34a">SVG</span>Pattern.svg<span>18 KB</span></div>
+    </div>
+    <div class="pv">
+      <div class="t"><img src="assets/favicon-32.png" alt="">Poster final.psd • 6000 × 6000 • 58 MB</div>
+      <div class="art"><div class="sun"></div><div class="h1"></div><div class="h2"></div><div class="cap"><small>SUMMER</small>Golden Hour</div></div>
+    </div>
+    <div class="press"><kbd>Space</kbd> to preview</div>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="stats">
+    <div><b>62 KB</b><span>whole app, one file</span></div>
+    <div><b>~75 ms</b><span>from Space to preview</span></div>
+    <div><b>&lt; 2 MB</b><span>RAM while waiting</span></div>
+    <div><b>0%</b><span>CPU in the background</span></div>
+  </div>
+
+  <section id="how">
+    <h2>Three steps. Zero learning curve.</h2>
+    <p class="sec-lead">If you've used Quick Look on a Mac, you already know how this works.</p>
+    <div class="steps">
+      <div class="card"><div class="n">1</div><h3>Run QuickView once</h3><p>It sits in the tray, waiting. Turn on <b>Start with Windows</b> from the tray menu and you never have to think about it again.</p></div>
+      <div class="card"><div class="n">2</div><h3>Select any file</h3><p>In File Explorer or on the desktop. Typing in the address bar, the search box or while renaming is never affected.</p></div>
+      <div class="card"><div class="n">3</div><h3>Tap Space</h3><p>The preview opens in a moment. Use <b>←</b>/<b>→</b> to flip through the folder, then tap Space again to close it.</p></div>
+    </div>
+  </section>
+
+  <section id="formats">
+    <h2>One viewer for every file.</h2>
+    <p class="sec-lead">QuickView has its own decoders for design formats and uses the preview handlers already installed on Windows for everything else. Install an app that adds a preview and QuickView picks it up automatically.</p>
+    <div class="formats">
+      <div class="card fmt"><h3>Documents</h3><p>Through Windows' own preview handlers</p><div class="chips"><span>PDF</span><span>DOCX</span><span>DOC</span><span>XLSX</span><span>XLS</span><span>PPTX</span><span>PPT</span><span>RTF</span><span>VSDX</span><span>MSG</span><span>EML</span><span>HTML</span><span>ODT</span><span>ODS</span><span>ODP</span></div></div>
+      <div class="card fmt"><h3>Design files</h3><p>Built-in decoders, no Adobe needed</p><div class="chips"><span>PSD</span><span>PSB</span><span>AI</span><span>EPS</span><span>INDD</span><span>SVG</span><span>SVGZ</span><span>SKETCH</span><span>XD</span><span>FIG</span><span>KRA</span><span>ORA</span><span>PROCREATE</span><span>3MF</span></div></div>
+      <div class="card fmt"><h3>Images &amp; photos</h3><p>GPU-rendered, with zoom, pan and EXIF rotation</p><div class="chips"><span>JPG</span><span>PNG</span><span>GIF</span><span>WEBP</span><span>HEIC</span><span>AVIF</span><span>TIFF</span><span>BMP</span><span>ICO</span><span>DDS</span><span>JXR</span><span>CR2</span><span>NEF</span><span>ARW</span><span>DNG</span></div></div>
+      <div class="card fmt"><h3>Code, text &amp; more</h3><p>100+ text formats, archives, and a thumbnail or info card for anything else</p><div class="chips"><span>TXT</span><span>MD</span><span>JSON</span><span>XML</span><span>CSV</span><span>LOG</span><span>YAML</span><span>PY</span><span>JS</span><span>TS</span><span>C#</span><span>CPP</span><span>ZIP</span><span>EPUB</span><span>MP4</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Keyboard first.</h2>
+    <div class="keys">
+      <div class="card"><kbd>Space</kbd><p>Open or close the preview</p></div>
+      <div class="card"><kbd>←</kbd><kbd>→</kbd><p>Previous / next file</p></div>
+      <div class="card"><kbd>Enter</kbd><p>Open in the default app</p></div>
+      <div class="card"><kbd>Esc</kbd><p>Close</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <details><summary>Windows SmartScreen warns me when I run it. Is it safe?</summary><p>QuickView isn't code-signed yet, so SmartScreen shows "Windows protected your PC" for new downloads. Click <b>More info → Run anyway</b>. The app is 62 KB, needs no admin rights, makes no network connections, and writes only one optional registry value (Start with Windows).</p></details>
+    <details><summary>How does it stay so small and light?</summary><p>It's native C++ with no runtime and no frameworks. A tiny background part only listens for Space. The viewer starts when you need it, stays warm for 2 minutes after you close it, then exits completely, so nothing heavy sits in memory.</p></details>
+    <details><summary>Do I need Photoshop or Illustrator to preview PSD, AI or EPS files?</summary><p>No. QuickView decodes the flattened image in PSD/PSB files and reads the preview embedded in AI, EPS and INDD files. If Adobe's own preview handler is installed, QuickView uses it for AI files.</p></details>
+    <details><summary>Word, Excel or PowerPoint files only show text.</summary><p>Full-fidelity Office previews come from Microsoft Office's preview handlers. Without Office installed, QuickView falls back to showing the text content of DOCX, XLSX and PPTX files.</p></details>
+    <details><summary>How do I make it start automatically, or uninstall it?</summary><p>Right-click the tray icon and tick <b>Start with Windows</b>. To uninstall, untick it, choose <b>Exit</b>, and delete <code>QuickView.exe</code>. If you used the ZIP installer, run <code>uninstall.ps1</code> instead.</p></details>
+  </section>
+
+  <div class="final">
+    <img src="assets/icon-256.png" alt="">
+    <h2 style="margin-top:18px">Stop opening files just to look at them.</h2>
+    <p class="sec-lead" style="margin:12px auto 0">Free, 62 KB, and ready in a few seconds.</p>
+    <div class="cta">
+      <a class="btn btn-dl" href="https://github.com/abdullah-al-faahim/QuickView-Windows/releases/latest/download/QuickView.exe">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+        <span>Download QuickView<small>v1.0.0 · Windows 64-bit</small></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>QuickView v1.0.0 · <a href="https://github.com/abdullah-al-faahim/QuickView-Windows/releases">Release notes</a> · <a href="https://github.com/abdullah-al-faahim/QuickView-Windows/issues">Report an issue</a></footer>
+</body>
+</html>
