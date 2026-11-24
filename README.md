@@ -39,7 +39,7 @@
 
 **Option B: installer ZIP** (installs per user and adds QuickView to *Open with*)
 
-1. Download **[QuickView-1.1.3-win64.zip](https://github.com/abdullah-al-faahim/QuickView-Windows/releases/latest/download/QuickView-1.1.3-win64.zip)** and extract it.
+1. Download **[QuickView-1.1.4-win64.zip](https://github.com/abdullah-al-faahim/QuickView-Windows/releases/latest/download/QuickView-1.1.4-win64.zip)** and extract it.
 2. Right-click `install.ps1` → **Run with PowerShell**. No admin rights needed.
 
 > [!NOTE]
